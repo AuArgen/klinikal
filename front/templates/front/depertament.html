@@ -1,0 +1,71 @@
+{% extends "front/core.html" %}
+{% block title %}Отделение{% endblock %}
+
+{% block content %}
+    <br><br><br><br><br><br>
+    <div class="liton__wishlist-area pb-70">
+        <div class="container">
+            <div class="ltn__product-tab-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 border">
+                            {% for i in info %}
+                                <ul>
+                                    <li class="fs-5"><a class="" href="{{ i.id }}">{{ i.name }}</a></li>
+                                </ul>
+                            {% endfor %}
+                        </div>
+
+                        <div class="col-lg-8">
+                            <div class="border p-3">
+                                <center><h1>Пациентам</h1></center>
+                                <div class="row">
+                                    <div class="col">
+                                        <ul>
+                                            <li>Офтальмологические услуги</li>
+                                            <li>Гинекологические услуги</li>
+                                            <li>Кардиологические услуги</li>
+                                            <li>Кардиологические услуги</li>
+                                            <li>Хирургические услуги</li>
+                                            <li>Физиотерапевтические услуги</li>
+                                            <li>Неврологические услуги</li>
+                                            <li>Функциональная диагностика</li>
+
+                                            <li>Услуги процедурного кабинета</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col">
+                                        <ul>
+                                            <li>Лабораторных услуг</li>
+                                            <li>Флюорографические услуги</li>
+                                            <li>Патологические услуги</li>
+                                            <li>Прейскурант на амбулаторно-поликлинические услуги</li>
+                                            <li>Прейскурант цен на сервисные услуги</li>
+                                            <li>Прейскурант цен на реанимационные услуги</li>
+                                            <li>Прейскурант цен на санитарные книжки</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="tab-pane fade active show" id="liton_tab_1_1">
+                        <div class="ltn__myaccount-tab-content-inner">
+                            {% if user.is_authenticated %}
+                                <p>Привет <strong>{{ user.first_name }} {{ user.last_name }}</strong></p>
+                                <p>Выберите отделении по имени</p>
+                            {% else %}
+                                <p>Сначала зарегитрируйтесь</p>
+                                <p class="text-success"><a href="{% url 'login' %}">Вход</a></p>
+                                <p class="text-success"><a href="{% url 'signup' %}">Регистрация</a></p>
+                            {% endif %}
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

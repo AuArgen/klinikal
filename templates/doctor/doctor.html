@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}Пациенты рег{% endblock %}
+
+{% block content %}
+    <h1>Пациенты регистрированные</h1>
+    <hr>
+
+    <table class="table text-light">
+        <thead>
+        <tr>
+            <th scope="col">№</th>
+            <th scope="col">Ф.И.О</th>
+            <th scope="col">Тел</th>
+            <th scope="col">Регион</th>
+            <th scope="col">Врач</th>
+            <th scope="col">Дата</th>
+            <th scope="col">Время</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            {% for h in jav %}
+            <th scope="row">{{ h.id }}</th>
+            <td>{{ h.name }} {{ h.sourname }}</td>
+            <td>{{ h.phone }}</td>
+            <td>{{ h.region }}</td>
+            <td>{{ h.doctor }}</td>
+            <td>{{ h.date }}</td>
+            <td>{{ h.time }}</td>
+
+        </tr>{% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

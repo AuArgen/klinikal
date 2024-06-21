@@ -1,0 +1,29 @@
+{% extends "front/core.html" %}
+{% block title %}Наши врачи{% endblock %}
+
+{% block content %}
+    <br><br><br><br><br><br>
+    <div class="container text-center">
+        <div class="row">
+            {% for doc in doctor %}
+                <div class="col-3">
+
+                    <div class="card bg-light">
+                        <img class="card-img-top" src="{{ doc.img.url }}" alt="{{ doc.name }}">
+                        <div class="card-body">
+                            <h4 class="card-title">{{ doc.first_name }} {{ doc.name }} {{ doc.last_name }}</h4>
+                            <h4>{{ doc.special }}</h4>
+                            <h4>Стаж: {{ doc.experience }}</h4>
+                            <a class="btn btn-info" href="{% url 'doctor' doc.pk %}">подробнее</a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            {% endfor %}
+        </div>
+    </div>
+ <br>
+{% endblock %}

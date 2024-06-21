@@ -1,0 +1,50 @@
+{% extends "front/core.html" %}
+{% block title %}Разработчик{% endblock %}
+{% load static %}
+
+{% block content %}
+    <br><br><br><br><br>
+    <div class="container">
+        <h3>Разработчик сайта</h3>
+        <div class="row">
+            <div class="col-4 ">
+                <img src="{% static 'img/begi.jpg' %}"
+                     alt="">
+            </div>
+            <div class="col  text-dark">
+                <p style="margin-bottom: 0; color: black" class="fs-3">Баястан уулу Бегислан</p>
+                <p style="margin-bottom: 0; color: black" class="fs-4">Fullstack-разработчик</p>
+
+                <form class="form-control">
+                    <center><h4>Контакт</h4></center>
+                    {#                    <div class="mb-3">#}
+                    {#                        <label for="exampleFormControlInput1" class="form-label">Email-адрес</label>#}
+                    {#                        <input type="email" class="form-control" id="exampleFormControlInput1"#}
+                    {#                               placeholder="Email-адрес">#}
+                    {#                    </div>#}
+                    {#                    <div class="mb-3">#}
+                    {#                        <label for="exampleFormControlTextarea1" class="form-label">Отзыв</label>#}
+                    {#                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>#}
+                    {#                    </div>#}
+                    {#                    <input class="btn btn-info" type="submit">#}
+
+                    <a style="width: 100%; margin-bottom: 20px;" target="_blank" href="https://wa.me/996774319355"
+                       class="btn btn-outline-success">
+                        Whatsapp
+                    </a>
+                    <a style="width: 100%; margin-bottom: 20px;" target="_blank"
+                       href="https://www.instagram.com/begislan_/" class="btn btn-outline-danger">
+                        Instagram
+                    </a>
+                    <a style="width: 100%; margin-bottom: 20px;" target="_blank"
+                       href="https://www.facebook.com/profile.php?id=100053794188306" class="btn btn-outline-primary">
+                        Facebook
+                    </a>
+
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+    <br>
+{% endblock %}

@@ -1,0 +1,255 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="robots" content="noindex, follow"/>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="{% static 'front/img/favicon.png' %}" type="image/x-icon"/>
+    <link rel="stylesheet" href="{% static 'front/css/font-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'front/css/plugins.css' %}">
+    <link rel="stylesheet" href="{% static 'front/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'front/css/responsive.css' %}">
+    {% block link %}{% endblock %}
+</head>
+
+<body>
+<div class="body-wrapper">
+
+    <!-- HEADER AREA START (header-5) -->
+    <header class="ltn__header-area ltn__header-5 ltn__header-logo-and-mobile-menu-in-mobile--- ltn__header-logo-and-mobile-menu--- ltn__header-transparent gradient-color-4---">
+        <!-- ltn__header-top-area start -->
+        <!-- <div class="ltn__header-top-area border-bottom top-area-color-white---">
+            <div class="container">
+              
+            </div>
+        </div> -->
+        <!-- ltn__header-top-area end -->
+        <div class="ltn__header-middle-area ltn__logo-right-menu-option ltn__header-row-bg-white ltn__header-padding ltn__header-sticky ltn__sticky-bg-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="site-logo-wrap">
+                            <div class="site-logo">
+                                <a href="{% url 'core' %}"><img
+                                        src="https://w7.pngwing.com/pngs/313/516/png-transparent-stethoscope-icon-stethoscope-icon-medical-icons-medical-icon-medicine-doctor-diagnosis-diagnose-clinic-thumbnail.png"
+                                        width="40px"
+                                        alt="Logo"></a>
+                            </div>
+{#                            <div class="get-support clearfix d-none">#}
+{#                                <div class="get-support-icon">#}
+{#                                    <i class="icon-call"></i>#}
+{#                                </div>#}
+{#                                <div class="get-support-info">#}
+{#                                    <h6>Get Support</h6>#}
+{#                                    <h4><a href="tel:+123456789">123-456-789-10</a></h4>#}
+{#                                </div>#}
+{#                            </div>#}
+                        </div>
+                    </div>
+                    <div class="col header-menu-column menu-color-white---">
+                        <div class="header-menu d-none d-xl-block">
+                            <nav>
+                                <div class="ltn__main-menu">
+                                    
+                                    <ul>
+                                        <li class=""><a href="{% url 'core' %}">Главная</a>
+                                        </li>
+                                        <li class=""><a href="{% url 'onas' %}">О нас</a>
+{#                                            <ul>#}
+{#                                                <li><a href="about.html">Наши врачи</a></li>#}
+{#                                                <li><a href="service.html">Services</a></li>#}
+{#                                                <li><a href="service-details.html">Service Details</a></li>#}
+{#                                                <li><a href="portfolio.html">Gallery</a></li>#}
+{#                                                <li><a href="portfolio-2.html">Gallery - 02</a></li>#}
+{#                                                <li><a href="portfolio-details.html">Gallery Details</a></li>#}
+{#                                                <li><a href="team.html">Team</a></li>#}
+{#                                                <li><a href="team-details.html">Team Details</a></li>#}
+{#                                                <li><a href="faq.html">FAQ</a></li>#}
+{#                                                <li><a href="locations.html">Google Map Locations</a></li>#}
+{#                                            </ul>#}
+                                        </li>
+                                        <li class=""><a href="{% url 'doctors' %}">Наши врачи</a>
+                                        </li>
+                                        <li><a class="" href={% url 'dep' %}>Отделении</a>
+                                        </li>
+                                        <li><a class="" href={% url 'nauka' %}>Наука и образование</a></li>
+{#                                        <li><a class="" href="{% url 'begi' %}">Разработчик</a></li>#}
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col--- ltn__header-options ltn__header-options-2 ">
+                        <div class="ltn__drop-menu user-menu">
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="icon-user"></i></a>
+                                    <ul>
+                                        {% if user.is_authenticated %}
+                                            <li>{{ user.first_name }} {{ user.last_name }}</li>
+                                            <li><a href="{% url 'logout' %}">Выход</a></li>
+                                            <li><a href="{% url 'article_new' %}">Добавить новый пост</a></li>
+                                            <li><a href="{% url 'password_change' %}">Изменить пароль</a></li>
+                                        {% else %}
+                                            <li><a href="{% url 'login' %}">Вход</a></li>
+                                            <li><a href="{% url 'signup' %}">Регистрация</a></li>
+                                        {% endif %}
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- mini-cart -->
+                        <!-- Mobile Menu Button -->
+                        <div class="mobile-menu-toggle d-xl-none">
+                            <a href="#ltn__utilize-mobile-menu" class="ltn__utilize-toggle">
+                                <svg viewBox="0 0 800 600">
+                                    <path d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200"
+                                          id="top"></path>
+                                    <path d="M300,320 L540,320" id="middle"></path>
+                                    <path d="M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190"
+                                          id="bottom"
+                                          transform="translate(480, 320) scale(1, -1) translate(-480, -318) "></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+        <!-- ltn__header-middle-area end -->
+    </header>
+    <!-- Utilize Mobile Menu Start -->
+    <div id="ltn__utilize-mobile-menu" class="ltn__utilize ltn__utilize-mobile-menu">
+        <div class="ltn__utilize-menu-inner ltn__scrollbar">
+            <div class="ltn__utilize-menu-head">
+                <div class="site-logo">
+                    <a href="{% url 'core' %}"><img
+                            src="https://lh3.googleusercontent.com/rmlKZS3ggiFsz_EiB3r8dl27MBBfAl_T7Kp-0VKzzdLX7PkjlJPXN9zZgvk91Ejz1emHmwQfPThIx_OhCon39aOs4yoyTDeLA9vFzKkl893cvzGmv8d4VeMiTfjZNExM94WkX_9wEBVf4naoyQVtYdXJM-5NwU3spiyzpkuWKDu5Q2vUxY11MPt4m7TNu5TU7euk5RCmeCIWwaPG1AzngXvlgW1WLX984RELRgKezbdxZbDcdfLUuILxoKh323zAjoIA1gYfqzUbUKHN-ka1tquZhNP9qOPiN0JtbMv51NmJtz67Cvi3xRm1Fq5QcR-7j5wXL5nb0JwGS_-W-YSFe9m2U6JcbfV-fkj40iGo6mIPeeKTWJfLyc07Mxe-bw1h6bTxJ4eeMPaS7OYJckFOlCP30Pp4ajuVavVI6MH-Hn9IYQXzjXh2gsLdd90Xn9p4BdCZWCMOkAIsXlGs_7O5NyZvfU-r_H77288pTxlN0qDl0e2wtaaCS81Htez51zkW2ZtJikmSrZ7FW6cEtGm5mUQGSLS2uUpvIzguYHsKoZsX8fmYA5kazTV_ERh9KFPBTtAx2OqrZ--W-_Av0-7GFSL8j7kTcb2dtxO4-y2Hh0iavCgL2UN8bNb7doS8Sl5Mw2rAPObGx5KTsXOb2WdoS88iDB9pWpdVdfLbS8SgIdK7OpBgKKCRaJ1Yyokc0xY7HvYi34Az2EnO7pmKe8MBHC4xEi46QPOWsr_Wxp-fex6NZz5XrkonX3VCBp2RCH6DBzxMDVUm77fDl17kNSNsZ12JQM60ZpKL6ExCpOhfOUCcYSEvXqJGB7yAIWQhLn4OkIdfo_7v4lnknp4G3BYahj4O86DB6XIn4JBBMVV9goayKwxteEu7CrjtdryyYxzAZCxp6klZLQAV04huOwFPg3nj2VarpU2ptecYNSsLFZ4=w969-h969-s-no?authuser=0"
+                            alt="Logo"></a>
+                </div>
+                <button class="ltn__utilize-close">×</button>
+            </div>
+            <div class="ltn__utilize-menu " >
+                <ul>
+                    <li class=""><a href="{% url 'core' %}">Главная</a>
+                    </li>
+                    <li class=""><a href="{% url 'onas' %}">О нас</a>
+                        <ul>
+                            <li><a href="about.html">Наши врачи</a></li>
+                            <li><a href="service.html">Services</a></li>
+                            <li><a href="service-details.html">Service Details</a></li>
+                            <li><a href="portfolio.html">Gallery</a></li>
+                            <li><a href="portfolio-2.html">Gallery - 02</a></li>
+                            <li><a href="portfolio-details.html">Gallery Details</a></li>
+                            <li><a href="team.html">Team</a></li>
+                            <li><a href="team-details.html">Team Details</a></li>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="locations.html">Google Map Locations</a></li>
+                        </ul>
+                    </li>
+                    <li class=""><a href="{% url 'doctors' %}">Наши врачи</a>
+                    </li>
+                    <li><a class="" href={% url 'dep' %}>Отделении</a>
+                    </li>
+                    <li><a class="" href={% url 'nauka' %}>Наука и образование</a></li>
+                    <li><a class="" href="{% url 'begi' %}">Разработчик</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Utilize Mobile Menu End -->
+
+
+    {% block content %}
+
+    {% endblock %}
+
+
+    <footer class="ltn__footer-area ">
+
+        <div class="footer-top-area  section-bg-1 plr--5">
+
+            <div class="container-fluid">
+
+                <div class="row">
+
+                    <div class="col-xl-3 col-md-6 col-sm-6 col-12">
+                        <center><div class="footer-widget footer-about-widget">
+                            <div class="footer-logo">
+                                <div class="site-logo" style="display: flex; justify-content: center">
+                                    <img width="200px"
+                                         src="https://w7.pngwing.com/pngs/313/516/png-transparent-stethoscope-icon-stethoscope-icon-medical-icons-medical-icon-medicine-doctor-diagnosis-diagnose-clinic-thumbnail.png"
+                                         alt="Logo"
+                                    >
+                                </div>
+
+                            </div>
+                            <!-- <h3><a href="{% url 'begi' %}">by Bayastan uulu Begislan</a></h3> -->
+                        </div></center>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-sm-6 col-12">
+                        <div class="footer-widget footer-menu-widget clearfix">
+                            <h4 class="footer-title">Медицина</h4>
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a>О нас</a></li>
+                                    <li><a>Врачи</a></li>
+                                    <li><a>Отделении</a></li>
+                                    <li><a>Наука и образование</a></li>
+                                    <li><a>Разработчик</a></li>
+                                    <li><a>Контакт</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-sm-6 col-12">
+                        <div class="footer-widget footer-menu-widget clearfix">
+                            <h4 class="footer-title">Сервис</h4>
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a>Запись на прием</a></li>
+                                    <li><a>Авторизовать</a></li>
+                                    <li><a>Зарегистрировать</a></li>
+                                    <li><a>Мой аккаунт</a></li>
+                                    <li><a>Добавить запись</a></li>
+                                    <li><a>К новостям</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-xl-3 col-md-6 col-sm-6 col-12">
+                        <div class="footer-widget footer-menu-widget clearfix">
+                            <h4 class="footer-title">Сыллки на другие сайты</h4>
+                            <div class="footer-menu">
+                                <ul>
+                                    <li><a href="https://www.oshsu.kg/ru">ОшГУ</a></li>
+                                    <li><a href="http://fmit.oshsu.kg/">Факультет МИТ</a></li>
+                                    <li><a href="http://fmit.oshsu.kg/pages/page/210">Кафедра ПИиИБ</a></li>
+                                    <li><a href="http://kb.oshsu.kg/">Компьютерный центр</a></li>
+                                    <li><a href="http://soft.oshsu.kg/">Софт</a></li>
+                                    <li><a href="https://compcenter.pythonanywhere.com/">Сайт о программирование</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- All JS Plugins -->
+    <script src="{% static 'front/js/plugins.js' %}"></script>
+    <!-- Main JS -->
+    <script src="{% static 'front/js/main.js' %}"></script>
+
+</body>
+</html>
+

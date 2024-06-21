@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}Client{% endblock %}
+
+{% block content %}
+<br>
+
+
+<center>
+  <h2 class="display-6 text-info">Сообшение</h2>
+  {% for post in posts %}
+      <hr>
+  <h6>{{ post.title }}</h6>
+  <p class="ppp">{{ post.body|safe }}</p>
+{% endfor %}
+</center>
+{% endblock %}

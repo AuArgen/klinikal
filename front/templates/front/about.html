@@ -1,0 +1,56 @@
+{% extends "front/core.html" %}
+{% block title %}Отделение{% endblock %}
+
+{% block content %}
+    <br><br><br><br><br><br>
+    <div class="container">
+
+        {% for i in info %}
+            {% if object.photo %}
+                <img class="" src="{{ object.photo.url }}" alt="{{ object.title }}">
+            {% endif %}
+            {{ i.info|safe }}
+        {% endfor %}
+
+
+        <h3>Наш врач</h3>
+        <div class="row">
+            <div class="col-4">
+                {% for object in doc %}
+                <img class="card-img-top" src="{{ object.img.url }}" alt="{{ object.name }}">
+            </div>
+            <div class="col">
+                <h4 class="title display-5">Ф.И.О: {{ object.name }} {{ object.first_name }}</h4>
+                <h4>{{ object.special }}</h4>
+                <h4>Телефон:{{ object.phone }}</h4>
+                <h4>Стаж: {{ object.experience }} год</h4>
+                <div class="reglament">
+                    <center><h3>Регламент</h3></center>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Отделение</th>
+                            <th scope="col">Пон-Пят</th>
+                            <th scope="col">Субота</th>
+                            <th scope="col">Кабинет</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">{{ object.department }}</th>
+                            <td>8:00 | 16:30</td>
+                            <td>8:00 | 14:30</td>
+                            <td>{{ object.kabinet }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <a href="{% url 'client_form' %}">
+                    <button class="btn btn-info">Записатся на прием</button>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <br>
+{% endblock %}
